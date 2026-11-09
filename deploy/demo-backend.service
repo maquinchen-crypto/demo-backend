@@ -1,0 +1,12 @@
+[Unit]
+Description=Demo backend Spring Boot
+After=network.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/demo-backend
+ExecStart=/usr/bin/java -jar /home/ec2-user/demo-backend/target/demo-0.0.1-SNAPSHOT.jar
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
